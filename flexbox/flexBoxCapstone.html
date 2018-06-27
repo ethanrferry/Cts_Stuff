@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .navbar{
+            background: forestgreen;
+        }
+
+        .navbar div {
+            display: none;
+        }
+
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline-block;
+        }
+
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: #0d570b;
+            color: white;
+        }
+
+        .navbar .link:hover,
+        .navbar .link:active {
+            color: #0d570b;
+            background: white;
+        }
+
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .navbar .toggle {
+            padding: 5px;
+            color: black;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+
+            .navbar .div{
+                display: flex;
+            }
+
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+
+            .navbar .link {
+                width: auto;
+            }
+            
+            .navbar .right {
+                justify-content: flex-end;
+            }
+
+            .navbar .toggle {
+                display: none;
+            }
+        }
+
+        @media (min-width: 48em) {
+            navbar div {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .navbar .active .toggle {
+                background: #0d570b;
+                color: white;
+            }
+
+            .navbar .brand {
+                text-align: left;
+            }
+
+            .navbar.active div {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="toggle" id=navHamburger>
+                <i class="fas fa-bars"></i>
+        </a>
+        <a href='#' class='brand'>Ethan</a>
+
+        <div class="left">
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+        </div>
+
+        <div class="right">
+            <a href="#" class="link">Link 3</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+
+    navHamburger.addEventListener('click', (e) => {
+        navHamburger.parentElement.classList.toggle('active')
+    })
+</script>
+</html>
