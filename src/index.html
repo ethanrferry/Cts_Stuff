@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+</head>
+
+<style>
+  img {
+    width: 400px;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .show-img-overlay {
+    position: relative;
+    bottom: 60px;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .hide-img-overlay {
+    position: relative;
+    bottom: 60px;
+    font-size: 21px;
+    color: transparent;
+  }
+</style>
+<body>
+
+  <div class="container">
+    <img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/laptop.jpg" class="site-img" alt="Laptop">
+    <div class="hide-img-overlay">Image Description</div>
+  </div>
+
+  <div class="container">
+    <img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/another-laptop.jpg" class="site-img" alt="Laptop">
+    <div class="hide-img-overlay">Some Other Image Description</div>
+  </div>
+
+</body>
+
+<script>
+
+    const imgs = document.querySelectorAll('.site-img');
+    
+    imgs.forEach(img =>{
+        img.addEventListener('mouseover', (event) => {
+            const captionElement = event.target.parentElement.children[1];
+            captionElement.className = 'show-img-overlay';
+        })
+    })
+
+    imgs.forEach(img =>{
+        img.addEventListener('mouseout', (event) => {
+            const captionElement = event.target.parentElement.children[1];
+            captionElement.className = 'hide-img-overlay';
+        })
+    })    
+    
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+</head>
+<body>
+  <div class="widget">
+    <input type="text" id="chat-input">
+    <button id="msgBtn" onclick="sendMessage()">Submit</button>
+    <button onclick="clearMessages()">Clear Messages</button>
+
+    <div class="chat-wrapper"></div>
+  </div>
+</body>
+
+<script>
+  function sendMessage(){
+      const newDiv = document.createElement('div');
+      newDiv.classList.add('chatMsg');
+      let chatInput = document.querySelector('#chat-input').value;
+      const newContent = document.createTextNode(chatInput);
+      newDiv.appendChild(newContent);
+
+      const widget = document.querySelector('.widget');
+      let chatWrapper = document.querySelector('#chat-wrapper');
+      document.querySelector('#chat-input').value = '';
+
+      if (document.querySelectorAll('.chatMsg').length > 0) {
+        chatWrapper = document.querySelectorAll('.chatMsg')[0];
+      }
+
+      widget.insertBefore(newDiv, chatWrapper);
+
+  }
+
+  function clearMessages() {
+    const messages = document.querySelectorAll('.chatMsg');
+    messages.forEach(message => message.remove());
+  }
+
+</script>
+
+</html>

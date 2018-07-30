@@ -1,0 +1,170 @@
+<!-- <!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+</head>
+<body>
+    <div id='dateComponent'></div>
+    <button id="dateBtn">Click For Date</button>
+    <!-- <button onclick="renderDate()">Click For Date</button> -->
+<!-- </body>
+
+<script>
+    const dateElement = document.getElementById('dateComponent');
+    
+    const dateBtn = document.getElementById('dateBtn');
+
+    // renderDate = () => {
+    //     dateElement.innerHTML = Date();
+    // }
+
+    dateBtn.addEventListener('click', (event) =>{
+        dateElement.innerHTML = Date();
+    })
+
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+
+  <style>
+    img {
+      width: 400px;
+    }
+
+    .site-img {
+        border: 0px 40px 0px 0px solid transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/laptop.jpg" class="site-img" alt="Laptop">
+  </div>
+</body>
+
+<script>
+    const laptop = document.querySelector('.site-img');
+
+    laptop.addEventListener('mouseover', (e) => {
+        e.target.style.borderRight = '40px solid red';
+    });
+
+    laptop.addEventListener('mouseout', (e) => {
+        e.target.style.borderRight = '40px solid transparent';
+    });
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+</head>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+<body>
+
+  <button id="toggleBtn">Toggle Me</button>
+
+  <div id="mainHeading" class="hidden">
+    Hi there
+  </div>
+
+</body>
+
+<script>
+    const heading = document.getElementById('mainHeading');
+    const btn = document.getElementById('toggleBtn');
+
+    btn.addEventListener('click', (e) => {
+        heading.classList.toggle('hidden');
+    });
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+</head>
+<body>
+    <input type="text" class="msgInput">
+
+    <div>
+        Characters left <span class="msgCounter">144</span>
+    </div>
+
+    <hr>
+
+    <input type="text" class="tagInput">
+
+    <div>
+        Characters left <span class="tagCounter">20</span>
+    </div>
+</body>
+<script>
+    const msgInput = document.querySelector('.msgInput');
+    const msgCounter = document.querySelector('.msgCounter');
+    const tagInput = document.querySelector('.tagInput');
+    const tagCounter = document.querySelector('.tagCounter');
+
+    const ensureContentLength = (content, max) => {
+        if (content.length > max) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+const textFieldLengthValidator = (textField, counter, maxCount) => {
+
+    textField.onkeyup = function() {
+        counter.innerHTML = maxCount -this.value.length;
+
+        if (!ensureContentLength(this.value, (maxCount - 1))){
+            textField.disabled = true;
+        }
+    }
+}
+
+textFieldLengthValidator(msgInput, msgCounter, 144);
+textFieldLengthValidator(tagInput, tagCounter, 20);
+</script>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="searchBar">
+</body>
+
+<script>
+    const hotKeys = (e) => {
+        let windowEvent  = window.event ? event : e;
+
+        if (windowEvent.keyCode === 66 && windowEvent.ctrlKey) {
+            const searchBar = document.querySelector('#searchBar');
+            searchBar.focus();
+        } 
+    }
+
+    document.onkeydown = hotKeys;
+</script>
+
+</html> -->
